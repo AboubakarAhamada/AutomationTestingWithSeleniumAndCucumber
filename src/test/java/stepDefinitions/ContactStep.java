@@ -2,6 +2,7 @@ package stepDefinitions;
 
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
+import io.cucumber.java.BeforeAll;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -18,7 +19,7 @@ public class ContactStep {
     private final static By name = By.id("name");
     private final static By email = By.id("email");
     private final static By sendBtn = By.className("btn");
-    @Before
+    @BeforeAll
     public static void beforeAll(){
         System.setProperty("webdriver.chrome.driver", "src/test/resources/lib/chromedriver.exe");
         driver.get(url);

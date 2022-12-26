@@ -32,6 +32,8 @@ public class ContactStep {
     public static void clearForm(){
         driver.findElement(name).clear();
         driver.findElement(email).clear();
+        driver.findElement(subject).clear();
+        driver.findElement(message).clear();
     }
     @AfterAll
     public static void afterAll(){
@@ -45,8 +47,12 @@ public class ContactStep {
         driver.findElement(email).sendKeys(arg1);
 
     }
-
-    @When("user clicks send button")
+    @When("user types {string} as subject and {string} as message")
+    public void userTypesAsSubjectAndAsMessage(String arg_subject, String arg_message) {
+        driver.findElement(subject).sendKeys(arg_subject);
+        driver.findElement(message).sendKeys(arg_message);
+    }
+    @And("user clicks send button")
     public void userClicksSendButton() {
         driver.findElement(sendBtn).click();
     }
@@ -82,4 +88,5 @@ public class ContactStep {
         String actualUrl = driver.getCurrentUrl();
         Assert.assertEquals(actualUrl,"https://formsubmit.co/ed1d536d07089e40e71a5279c11fe729");
     }
+
 }

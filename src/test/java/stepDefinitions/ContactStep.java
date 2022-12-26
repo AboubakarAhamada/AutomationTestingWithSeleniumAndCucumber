@@ -51,8 +51,8 @@ public class ContactStep {
         driver.findElement(sendBtn).click();
     }
 
-    @Then("nothing happens")
-    public void nothingHappens() {
+    @Then("user cannot submit message")
+    public void userCannotSubmitMessage() {
         String actualUrl = driver.getCurrentUrl();
         Assert.assertEquals(actualUrl,url);
     }

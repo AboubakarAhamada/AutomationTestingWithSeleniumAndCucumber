@@ -1,7 +1,8 @@
 Feature: Test Contact Form
   Scenario Outline: Send message with invalid email
-    Given user enters "<name>" as name and "<email>" as email
-    When user types "Un projet intéressant pour toi" as subject and "Nous avons besoins d'un ingénieur en automatisation de test" as message
+    Given user is on the contact page
+    When user enters "<name>" as name and "<email>" as email
+    And user types "Un projet intéressant pour toi" as subject and "Nous avons besoins d'un ingénieur en automatisation de test" as message
     And user clicks send button
     Then user cannot submit message
     Examples:

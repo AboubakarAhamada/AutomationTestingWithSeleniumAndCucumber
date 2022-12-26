@@ -40,14 +40,18 @@ public class ContactStep {
         driver.quit();
     }
 
-    @Given("user enters {string} as name and {string} as email")
+    @Given("user is on the contact page")
+    public void userIsOnTheContactPage() {
+        driver.get(url);
+    }
+    @When("user enters {string} as name and {string} as email")
     public void userEntersAsNameAndAsEmail(String arg0, String arg1) {
 
         driver.findElement(name).sendKeys(arg0);
         driver.findElement(email).sendKeys(arg1);
 
     }
-    @When("user types {string} as subject and {string} as message")
+    @And("user types {string} as subject and {string} as message")
     public void userTypesAsSubjectAndAsMessage(String arg_subject, String arg_message) {
         driver.findElement(subject).sendKeys(arg_subject);
         driver.findElement(message).sendKeys(arg_message);

@@ -33,7 +33,7 @@ public class ContactStep {
         driver.findElement(name).clear();
         driver.findElement(email).clear();
         driver.findElement(subject).clear();
-        driver.findElement(message).clear();
+        driver.findElement(message).clear() ;
     }
     @AfterAll
     public static void afterAll(){

@@ -4,8 +4,11 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
+
 @CucumberOptions(
-        features = {"classpath:features/contact.feature"},
+        features = {"classpath:features"},
         glue = {"stepDefinitions"})
+
+
 public class RunCucumberTest {
 }

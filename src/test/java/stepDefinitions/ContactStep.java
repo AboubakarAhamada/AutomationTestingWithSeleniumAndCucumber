@@ -1,8 +1,5 @@
 package stepDefinitions;
 
-import io.cucumber.java.AfterAll;
-import io.cucumber.java.Before;
-import io.cucumber.java.BeforeAll;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -23,22 +20,6 @@ public class ContactStep {
     private final static By subject = By.id("subject");
     private final static By message = By.id("message");
     private final static By sendBtn = By.className("btn");
-    @BeforeAll
-    public static void beforeAll(){
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/lib/chromedriver.exe");
-        driver.get(url);
-    }
-    @Before
-    public static void clearForm(){
-        driver.findElement(name).clear();
-        driver.findElement(email).clear();
-        driver.findElement(subject).clear();
-        driver.findElement(message).clear() ;
-    }
-    @AfterAll
-    public static void afterAll(){
-        driver.quit();
-    }
 
     @Given("user is on the contact page")
     public void userIsOnTheContactPage() {
@@ -92,5 +73,4 @@ public class ContactStep {
         String actualUrl = driver.getCurrentUrl();
         Assert.assertEquals(actualUrl,"https://formsubmit.co/ed1d536d07089e40e71a5279c11fe729");
     }
-
 }
